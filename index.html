@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>FitForce Gym Dashboard</title>
+  <!-- Bootstrap CSS CDN -->
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body { background: #f5f6fa; font-family: Arial, sans-serif; }
+    .sidebar { width: 220px; background: #214c90; min-height: 100vh; color: #fff; position: fixed; }
+    .sidebar .active { background: #114080; }
+    .sidebar a { color: #fff; display: block; padding: 12px 20px; text-decoration: none; border-radius: 5px 0 0 5px; }
+    .sidebar a:hover { background: #2c5aad; }
+    .main-content { margin-left: 220px; padding: 40px 30px 10px; }
+    .card { border-radius: 12px; }
+    .quick-action { background: #eff6ff; border: none; margin-bottom: 10px;}
+    .plan-basic { background: #e3f0ff; }
+    .plan-premium { background: #f5e3ff; }
+    .plan-vip { background: #fff7e3; }
+    .stats .card { min-width: 170px; min-height: 110px; }
+    .profile-circle {
+      width: 36px; height: 36px;
+      background: #aad4f3;
+      color: #0e3662; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-weight: bold; font-size: 1.2em;
+    }
+    .footer { font-size: 14px; color: #ccc; text-align: right; margin: 20px 0 0;}
+    @media (max-width: 900px) {
+      .main-content { margin-left: 0; }
+      .sidebar { position: static; width: 100%; min-height: 0; }
+    }
+  </style>
+</head>
+<body>
+  <div class="sidebar d-flex flex-column">
+    <div class="p-4 font-weight-bold text-center" style="font-size: 1.4em;">FitForce</div>
+    <a href="#" class="active">Dashboard</a>
+    <a href="#">Members</a>
+    <a href="#">Payments</a>
+    <a href="#">Attendance</a>
+    <div class="mt-auto p-3" style="opacity:0.7">Settings</div>
+  </div>
+
+  <div class="main-content">
+    <!-- Header & Profile -->
+    <div class="d-flex justify-content-between align-items-center mb-4">
+      <div>
+        <h4 class="mb-0">Dashboard</h4>
+        <small class="text-secondary">Overview of your gym operations</small>
+      </div>
+      <div class="d-flex align-items-center">
+        <span class="mr-2 text-secondary">Gym Owner</span>
+        <div class="profile-circle">G</div>
+      </div>
+    </div>
+    <!-- Hero Image welcome banner -->
+    <div class="mb-4" style="border-radius: 16px; overflow:hidden; position:relative;">
+      <img src="https://images.unsplash.com/photo-1517971071642-18b7a7b13a8c?fit=crop&w=900&q=80" alt="Gym" style="width:100%; height:140px; object-fit:cover; filter:brightness(0.72);">
+      <div style="position:absolute;top:0;left:0;width:100%;height:100%;display:flex;align-items:center;color:#fff;font-size:2em;font-weight:bold; letter-spacing:1px;
+           padding-left:40px; text-shadow:0 2px 10px #070707;">
+        <div>
+          Welcome to FitForce <br>
+          <span style="font-size:0.7em;font-weight:400;">Hello Gym Owner!</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Stats Cards -->
+    <div class="d-flex stats justify-content-between mb-4 flex-wrap">
+      <div class="card text-center px-3 py-3 mb-2">
+        <div style="font-size: 1.8em;">👥</div>
+        <div class="h4 mb-0">4</div>
+        <small>Total Members</small>
+      </div>
+      <div class="card text-center px-3 py-3 mb-2">
+        <div style="font-size: 1.8em;">✅</div>
+        <div class="h4 mb-0">4</div>
+        <small>Active Members</small>
+      </div>
+      <div class="card text-center px-3 py-3 mb-2">
+        <div style="font-size: 1.8em;">💵</div>
+        <div class="h4 mb-0">$0.00</div>
+        <small>Monthly Revenue</small>
+      </div>
+      <div class="card text-center px-3 py-3 mb-2">
+        <div style="font-size: 1.8em;">⚠️</div>
+        <div class="h4 mb-0">0</div>
+        <small>Expired</small>
+      </div>
+      <div class="card text-center px-3 py-3 mb-2">
+        <div style="font-size: 1.8em;">📅</div>
+        <div class="h4 mb-0">0</div>
+        <small>Today's Check-ins</small>
+      </div>
+    </div>
+
+    <!-- Quick Actions & Plans -->
+    <div class="row">
+      <div class="col-md-6 mb-3">
+        <div class="font-weight-bold mb-3">Quick Actions</div>
+        <div class="card quick-action p-3">
+          <span class="font-weight-bold" style="color:#1967d2;">Manage Members</span><br>
+          <small>Add, edit, or view member information</small>
+        </div>
+        <div class="card quick-action p-3" style="background:#eefaed;">
+          <span class="font-weight-bold" style="color:#16a34a;">Record Payment</span><br>
+          <small>Process member payments and renewals</small>
+        </div>
+        <div class="card quick-action p-3" style="background:#f9eaff;">
+          <span class="font-weight-bold" style="color:#9d34a6;">Check-in Member</span><br>
+          <small>Track member attendance</small>
+        </div>
+      </div>
+
+      <div class="col-md-6 mb-3">
+        <div class="font-weight-bold mb-3">Membership Plans</div>
+        <div class="card plan-basic p-3 mb-2">
+          <strong>Basic</strong><br>
+          <small>Access to gym equipment</small>
+          <div class="float-right h5" style="color:#1967d2;">$29.99 <span class="font-weight-normal" style="font-size:0.8em;">per month</span></div>
+        </div>
+        <div class="card plan-premium p-3 mb-2">
+          <strong>Premium</strong><br>
+          <small>Gym + Classes + Locker</small>
+          <div class="float-right h5" style="color:#9d34a6;">$49.99 <span class="font-weight-normal" style="font-size:0.8em;">per month</span></div>
+        </div>
+        <div class="card plan-vip p-3 mb-2">
+          <strong>VIP</strong><br>
+          <small>All Access + Personal Training</small>
+          <div class="float-right h5" style="color:#e8a300;">$79.99 <span class="font-weight-normal" style="font-size:0.8em;">per month</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer">Made with Emergent</div>
+  </div>
+</body>
+</html>
